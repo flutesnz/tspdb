@@ -1,13 +1,5 @@
 package tspdb
 
-/*
-	- create/init
-	- update
-	- delete
-	- view
-
-*/
-
 import (
 	"database/sql"
 	"log"
@@ -31,14 +23,8 @@ func checkErrorFatal(err error, exit bool) {
 	}
 }
 
-func initDatabaseConnection(dbFile string) (*sql.DB, error) {
+func InitDatabaseConnection(dbFile string) (*sql.DB, error) {
 	db, err := sql.Open("sqlite3", dbFile)
 	checkError(err)
 	return db, nil
-}
-
-func main() {
-	db, dbError := initDatabaseConnection("./tsp.db")
-	checkErrorFatal(dbError, true)
-	defer db.Close()
 }
