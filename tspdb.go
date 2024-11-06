@@ -26,5 +26,8 @@ func checkErrorFatal(err error, exit bool) {
 func InitDatabaseConnection(dbFile string) (*sql.DB, error) {
 	db, err := sql.Open("sqlite3", dbFile)
 	checkError(err)
+
+	 _, err = db.Exec("CREATE TABLE IF NOT EXISTS example (id INTEGER PRIMARY KEY, name TEXT)") checkError(err)
+	checkError(err)
 	return db, nil
 }
