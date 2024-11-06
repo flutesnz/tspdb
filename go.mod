@@ -1,4 +1,4 @@
-module tspdb
+module github.com/flutesnz/tspdb
 
 go 1.23.1
 
