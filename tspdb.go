@@ -1,4 +1,4 @@
-package tspdb
+package github.com/flutesnz/tspdb
 
 /*
 	- create/init
